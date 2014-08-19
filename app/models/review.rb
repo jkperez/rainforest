@@ -4,8 +4,4 @@ class Review < ActiveRecord::Base
   validates :comment, presence: true
 
   validates  :product, :presence => {message: "not found"}
-
-
-
-
 end
