@@ -25,3 +25,7 @@ body > header {
 	height: 175px;
 	margin: 0;
 }
+
+body .page-header h1 {
+	text-align: center;
+}
