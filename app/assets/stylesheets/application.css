@@ -16,3 +16,11 @@
 body {
 	background-image: url('skulls.png');
 }
+
+body > h1 {
+	background-image: url('grasses.png'), url('scrubland.png');
+	background-repeat: repeat, no-repeat;
+	border-bottom: 4px solid #00882c;
+	height: 175px;
+	margin: 0;
+}
