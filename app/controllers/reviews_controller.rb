@@ -28,7 +28,11 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review.product || @review, notice: 'Review was successfully created.' }
+        if(request.xhr?)
+          format.html { render partial: 'reviews/inline_review', locals: { review: @review } }
+        else
+          format.html { redirect_to @review.product || @review, notice: 'Review was successfully created.' }
+        end
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
