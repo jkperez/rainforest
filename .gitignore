@@ -14,3 +14,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore .DS_Store
+/app/assets/.DS_Store
+
+# Ignore images
+/app/assets/images/scrubland.xcf
+/app/assets/images/skulls.xcf
