@@ -8,8 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:price_in_cents) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Price</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,8 +18,7 @@
         <td><%= link_to product.id, product_path(product) %></td>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.price_in_cents %></td>
-        <td><%=l product.created_at %></td>
+        <td><%= product.formatted_price %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_product_path(product), :class => 'btn btn-default btn-xs' %>
