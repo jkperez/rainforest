@@ -17,7 +17,7 @@ body {
 	background-image: url('//i.imgur.com/TWVQE8l.png');
 }
 
-body > h1 {
+body > header {
 	background-image: url('//i.imgur.com/8QnSkNY.png'), url('//i.imgur.com/T39ixDS.png');
 	background-repeat: repeat, no-repeat;
 	border-bottom: 4px solid #00882c;
