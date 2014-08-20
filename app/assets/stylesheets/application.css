@@ -14,11 +14,12 @@
  *= require_self
  */
 body {
-	background-image: url('//i.imgur.com/TWVQE8l.png');
+	/*background-image: url('//i.imgur.com/TWVQE8l.png');*/
+	background-image: url('//i.imgur.com/lt9BfMo.png?1')
 }
 
 body > header {
-	background-image: url('//i.imgur.com/8QnSkNY.png'), url('//i.imgur.com/T39ixDS.png');
+	background-image: url('//i.imgur.com/8QnSkNY.png'), url('//i.imgur.com/T39ixDS.png'), url('//i.imgur.com/TWVQE8l.png');
 	background-repeat: repeat, no-repeat;
 	border-bottom: 4px solid #00882c;
 	height: 175px;
