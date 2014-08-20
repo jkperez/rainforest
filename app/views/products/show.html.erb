@@ -8,8 +8,8 @@
   <dd><%= @product.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @product.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price_in_cents) %>:</strong></dt>
-  <dd><%= @product.price_in_cents %></dd>
+  <dt><strong>Price:</strong></dt>
+  <dd><%= @product.formatted_price %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
