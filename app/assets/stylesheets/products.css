@@ -2,7 +2,10 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-article {
-	width: 80%;
-	margin: auto;
+a img.product {
+	border: 2px solid transparent;
+}
+
+a img.product:hover {
+	border: 2px solid black;
 }

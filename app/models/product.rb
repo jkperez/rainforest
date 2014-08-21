@@ -23,6 +23,6 @@ class Product < ActiveRecord::Base
 	end
 
 	def image_tag
-		"<img src=\"#{picture}\" alt=\"picture\">".html_safe
+		"<img src=\"#{picture}\" alt=\"#{name}\" class=\"product\">".html_safe
 	end
 end

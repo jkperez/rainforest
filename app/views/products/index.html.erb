@@ -7,7 +7,6 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th><%= model_class.human_attribute_name(:id) %></th>
         <th><%= model_class.human_attribute_name(:name) %></th>
         <th><%= model_class.human_attribute_name(:picture) %></th>
         <th><%= model_class.human_attribute_name(:description) %></th>
@@ -18,14 +17,13 @@
     <tbody>
       <% @products.each do |product| %>
         <tr>
-          <td><%= link_to product.id, product_path(product) %></td>
-          <td><%= product.name %></td>
-          <td><%= product.image_tag %></td>
+          <td><%= link_to product.name, product_path(product) %></td>
+          <td><%= link_to product.image_tag, product_path(product) %></td>
           <td><%= product.description %></td>
           <td><%= product.formatted_price %></td>
           <td>
-            <%= link_to t('.show', :default => t("helpers.links.show")),
-                        product, :class => 'btn btn-default btn-xs' %>
+<!--             <%= link_to t('.show', :default => t("helpers.links.show")),
+                        product, :class => 'btn btn-default btn-xs' %> -->
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
                         edit_product_path(product), :class => 'btn btn-default btn-xs' %>
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
