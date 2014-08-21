@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_categories, only: [:new, :edit]
+  
   # GET /products
   # GET /products.json
   def index
@@ -32,6 +33,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
+        set_categories
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
@@ -68,8 +70,12 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    def set_categories
+      @categories = Category.order(:name)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price_in_cents, :picture)
+      params.require(:product).permit(:name, :description, :price_in_cents, :picture, :category, :category_id)
     end
 end
