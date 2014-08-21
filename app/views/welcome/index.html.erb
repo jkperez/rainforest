@@ -1,0 +1,16 @@
+<article>
+  <table class="table table-striped">
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+        	<td colspan="4"><h2><%= category.name %></h2></td>
+        </tr>
+        <tr>
+        	<% category.products.each do |product| %>
+        		<td><%= product.image_tag %></td>
+        	<% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</article>
