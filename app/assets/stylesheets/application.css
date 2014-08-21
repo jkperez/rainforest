@@ -43,3 +43,9 @@ article {
 	font-size: 20px;
 	font-family: Impact;
 }
+
+.new_item {
+	clear: left;
+	display: block;
+	width: 100px;
+}
