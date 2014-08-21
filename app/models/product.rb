@@ -21,4 +21,8 @@ class Product < ActiveRecord::Base
 
 		"$" + price_in_dollars;
 	end
+
+	def image_tag
+		"<img src=\"#{picture}\" alt=\"picture\">".html_safe
+	end
 end

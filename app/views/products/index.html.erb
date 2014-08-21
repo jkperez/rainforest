@@ -9,6 +9,7 @@
       <tr>
         <th><%= model_class.human_attribute_name(:id) %></th>
         <th><%= model_class.human_attribute_name(:name) %></th>
+        <th><%= model_class.human_attribute_name(:picture) %></th>
         <th><%= model_class.human_attribute_name(:description) %></th>
         <th>Price</th>
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -19,6 +20,7 @@
         <tr>
           <td><%= link_to product.id, product_path(product) %></td>
           <td><%= product.name %></td>
+          <td><%= product.image_tag %></td>
           <td><%= product.description %></td>
           <td><%= product.formatted_price %></td>
           <td>
