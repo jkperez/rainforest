@@ -34,7 +34,7 @@ class Product < ActiveRecord::Base
 		rating_count = number_of_reviews;
 		
 		if (rating_count == 0)
-			return 0
+			return "None"
 		end
 
 		rating_total = 0
