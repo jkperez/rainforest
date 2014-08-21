@@ -25,4 +25,24 @@ class Product < ActiveRecord::Base
 	def image_tag
 		"<img src=\"#{picture}\" alt=\"#{name}\" class=\"product\">".html_safe
 	end
+
+	def number_of_reviews
+		reviews.count
+	end
+
+	def average_review
+		rating_count = number_of_reviews;
+		
+		if (rating_count == 0)
+			return 0
+		end
+
+		rating_total = 0
+		
+		reviews.each { |review| 
+			rating_total += review.rating
+		}
+
+		sprintf("%.1f", rating_total.to_f / rating_count)
+	end
 end
