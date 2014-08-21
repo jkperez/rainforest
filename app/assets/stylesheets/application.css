@@ -28,6 +28,16 @@ body > header {
 	margin-bottom: 20px;
 }
 
+body > header > a {
+	width: 500px;
+	height: 175px;
+	display: block;
+}
+
+body > header > a:hover {
+	background-color: rgba(0,0,0,.05)
+}
+
 body .page-header h1 {
 	text-align: center;
 	font-size: 35px;
@@ -43,6 +53,7 @@ article {
 	border: 2px solid rgba(0,0,0,0.25);
 	font-size: 20px;
 	font-family: Impact;
+	overflow: auto;
 }
 
 .new_item {

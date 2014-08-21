@@ -1,16 +1,10 @@
-<article>
-  <table class="table table-striped">
-    <tbody>
+<article id="index">
+  
       <% @categories.each do |category| %>
-        <tr>
-        	<td colspan="4"><h2><%= category.name %></h2></td>
-        </tr>
-        <tr>
-        	<% category.products.each do |product| %>
-        		<td><%= product.image_tag %></td>
-        	<% end %>
-        </tr>
+      <h2><%= link_to category.name, category_path(category) %></h2>
+        	<% @products = category.recent_3_products %>
+        	<section>
+						<%= render 'products/grid_view' %>
+					</section>
       <% end %>
-    </tbody>
-  </table>
 </article>
