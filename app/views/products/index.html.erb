@@ -11,7 +11,7 @@
         <th><%= model_class.human_attribute_name(:picture) %></th>
         <th><%= model_class.human_attribute_name(:description) %></th>
         <th>Price</th>
-        <th># of Reviews</th>
+        <th>Rating</th>
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
     </thead>
@@ -22,7 +22,7 @@
           <td><%= link_to product.image_tag, product_path(product) %></td>
           <td><%= product.description %></td>
           <td><%= product.formatted_price %></td>
-          <td><%= product.number_of_reviews %><br>Average: <%= product.average_review %> </td>
+          <td><%= product.number_of_reviews %> Reviews<br>Average: <%= product.average_review %> </td>
           <td>
 <!--             <%= link_to t('.show', :default => t("helpers.links.show")),
                         product, :class => 'btn btn-default btn-xs' %> -->
