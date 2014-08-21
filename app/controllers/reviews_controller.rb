@@ -36,7 +36,8 @@ class ReviewsController < ApplicationController
         format.json { render :show, status: :created, location: @review }
       else
         if(request.xhr?)
-          format.html { render partial: 'reviews/review_errors' }
+          # request.status = "500"
+          format.html { render partial: 'reviews/review_errors', status: 406 }
         else
           format.html { render :new }
         end
