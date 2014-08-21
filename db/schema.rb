@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821135603) do
+ActiveRecord::Schema.define(version: 20140821184040) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20140821135603) do
 
   create_table "reviews", force: true do |t|
     t.text     "comment",    null: false
-    t.integer  "product_id"
+    t.integer  "product_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rating"
+    t.integer  "rating",     null: false
   end
 
   add_index "reviews", ["product_id"], name: "index_reviews_on_product_id"
