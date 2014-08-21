@@ -29,6 +29,8 @@ body > header {
 
 body .page-header h1 {
 	text-align: center;
+	font-size: 35px;
+	font-family: Impact;
 }
 
 article {
@@ -38,4 +40,6 @@ article {
 	padding: 25px;
 	border-radius: 25px;
 	border: 2px solid rgba(0,0,0,0.25);
+	font-size: 20px;
+	font-family: Impact;
 }
