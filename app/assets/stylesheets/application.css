@@ -14,11 +14,12 @@
  *= require_self
  */
 body {
-	/*background-image: url('//i.imgur.com/TWVQE8l.png');*/
+	background-color: #00882c;
 	background-image: url('//i.imgur.com/lt9BfMo.png?1')
 }
 
 body > header {
+	background-color: #24bbbe;
 	background-image: url('//i.imgur.com/8QnSkNY.png'), url('//i.imgur.com/T39ixDS.png'), url('//i.imgur.com/TWVQE8l.png');
 	background-repeat: repeat, no-repeat;
 	border-bottom: 4px solid #00882c;
@@ -28,4 +29,13 @@ body > header {
 
 body .page-header h1 {
 	text-align: center;
+}
+
+article {
+	width: 80%;
+	margin: auto;
+	background-color: #f4d9aa;
+	padding: 25px;
+	border-radius: 25px;
+	border: 2px solid rgba(0,0,0,0.25);
 }
