@@ -25,6 +25,7 @@ body > header {
 	border-bottom: 4px solid #00882c;
 	height: 175px;
 	margin: 0;
+	margin-bottom: 20px;
 }
 
 body .page-header h1 {

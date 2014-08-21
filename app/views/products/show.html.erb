@@ -8,6 +8,8 @@
   <dd><%= @product.image_tag %></dd> <br>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @product.description %></dd> <br>
+  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
+  <dd><%= @product.category.name %></dd> <br>
   <dt><strong>Price:</strong></dt>
   <dd><%= @product.formatted_price %></dd>
 </dl>
