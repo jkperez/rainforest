@@ -35,7 +35,10 @@ aside#product-image {
 	float: left;
 	margin: 20px;
 	margin-top: 0;
-	max-width: 600px;
+}
+
+aside#product-image img {
+	max-width: 500px;
 }
 
 section#product-info {
