@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :reviews
 
+  get 'products/', to: 'products#index', page: 1
+  get 'products/page/:page', to: 'products#index'
+
   resources :products do
     resources :reviews
   end

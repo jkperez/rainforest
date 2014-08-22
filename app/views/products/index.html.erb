@@ -5,8 +5,15 @@
 
 <%- model_class = Product -%>
 <article>
-  <h1>Viewing all Products</h1>
+  <h1>Viewing Products <%= "#{@offset + 1} to #{@offset + @products.count}" %></h1>
   
   <%= render 'grid_view' %>
+
+  <% if @page > 1 %>
+  	<nav id="previous"><%= link_to 'Previous page', page: @page - 1 %></nav>
+  <% end %>
+  <% unless @final_page %>
+  	<nav id="next"><%= link_to 'Next page', page: @page + 1 %></nav>
+  <% end %>
 
 </article>

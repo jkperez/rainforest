@@ -1,5 +1,8 @@
-<%- model_class = Category -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
-</div>
-<%= render :partial => 'form' %>
+<nav> <%= link_to "Back to Categories", categories_path, :class => 'btn btn-default' %></nav>
+
+<article id="category-edit"><%- model_class = Category -%>
+	<div class="page-header">
+	  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+	</div>
+	<%= render :partial => 'form' %>
+</article>

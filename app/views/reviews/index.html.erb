@@ -19,8 +19,8 @@
             <%= link_to "#{review.product.name}<br>#{review.product.thumbnail}".html_safe, product_path(review.product) %>
           </td>
           <td style="padding-top: 40px; width: 600px;"><%= render partial: 'reviews/inline_review', locals: { review: review } %></td>
-          <td>
-            <%= link_to 'Edit', edit_review_path(review), :class => 'btn btn-default btn-xs' %><br>
+          <td style="padding: 40px">
+            <%= link_to 'Edit', edit_review_path(review), :class => 'btn btn-default btn-xs' %><br><br>
             <%= link_to 'Destroy', review, method: :delete, class: 'btn btn-danger btn-xs' %>
           </td>
         </tr>

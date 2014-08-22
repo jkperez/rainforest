@@ -5,7 +5,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @page = (params[:page] || 1).to_i 
+    @offset = (@page - 1)  * 9
+    @final_page = @offset + 9 >= Product.all.count
+    
+    @products = Product.order(updated_at: :desc).limit(9).offset(@offset).all
   end
 
   # GET /products/1

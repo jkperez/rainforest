@@ -35,7 +35,7 @@ aside#product-image {
 	float: left;
 	margin: 20px;
 	margin-top: 0;
-	max-width: 70%;
+	max-width: 40%;
 	text-align: center;
 }
 
@@ -44,8 +44,8 @@ aside#product-image img {
 }
 
 section#product-info {
-	float: left;
-	/*margin-left: 40px;*/
+	display: inline-block;
+	width: 55%;
 }
 
 section#product-reviews {
@@ -89,15 +89,15 @@ section#product-reviews {
 	width: 350px;
 }
 
-#reviews {
+section#reviews {
 	width: 55%;
 }
 
-#reviews p, form#new_review {
+section#reviews p, form#new_review {
 	font-size: 13pt;
 }
 
-#reviews h3 {
+section#reviews h3 {
 	font-size: 28pt;
 	border-bottom: 2px solid black;
 	padding-left: 30px;
@@ -110,4 +110,14 @@ section.review {
 	border-radius: 10px;
 	padding: 15px;
 	margin-bottom: 30px;
+}
+
+nav#previous {
+	clear: left;
+	float: left;
+}
+
+nav#next {
+	clear: right;
+	float: right;
 }
