@@ -54,6 +54,15 @@
     <%= error_span(@product[:price_in_cents]) %>
   </div>
 
+  <div class="control-group">
+    <%= f.label :sale, "Sale Amount (100 for no sale)", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sale, :class => 'form-control' %>
+    </div>
+    <%= error_span(@product[:sale]) %>
+  </div>
+
+
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
