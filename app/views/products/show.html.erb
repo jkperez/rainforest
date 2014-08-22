@@ -19,7 +19,10 @@
         <li>
           <section >
             <h1>Price</h1>
-            <p><%= @product.formatted_price %></p>
+            <p>
+              <%= @product.formatted_price %>
+              <%= ("<br><span class=\"sale\">" + @product.formatted_sale + "</span>").html_safe if @product.sale && @product.sale < 100 %>
+            </p>
           </section>
         <li>
           <section >

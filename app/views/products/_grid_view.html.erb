@@ -7,7 +7,10 @@
         
         <div class="caption">
           <p><%= product.reviews_summary %></p>
-          <p><%= product.formatted_price %></p>
+          <p>
+            <%= product.formatted_price %>
+            <%= ("<br><span class=\"sale\">" + product.formatted_sale + "</span>").html_safe if product.sale && product.sale < 100 %>
+          </p>
         </div>
 
         <div class="actions">

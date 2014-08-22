@@ -70,6 +70,14 @@ body > nav {
 	color: #AA0000
 }
 
+.regular-price {
+	text-decoration: line-through;
+}
+
+.sale {
+	font-weight: bold;
+}
+
 nav li {
 	margin-bottom: 4px;
 	display: inline;
