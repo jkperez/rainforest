@@ -83,7 +83,7 @@ body > article {
 	width: 80%;
 	padding: 25px;
 	font-size: 20px;
-	font-family: Impact;
+	font-family: Verdana;
 	overflow: auto;
 	margin-bottom: 40px;
 }
@@ -106,6 +106,36 @@ article h2 {
 	text-align: right;
 	padding-right: 30px;
 	clear: both;
+}
+
+.thumbnail {
+	overflow: auto;
+	border-radius: 10px;
+  box-shadow: 10px 10px 5px #888888;
+
+}
+
+.thumbnail h3 {
+	margin: 5px;
+	text-align: center;
+}
+
+.thumbnail img.product {
+	float: left;
+	display: inline;
+	margin: 2px;
+	margin-right: 10px;
+	border-radius: 8px;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.thumbnail .actions {
+	text-align: center;
+}
+
+.thumbnail .price {
+	font-size: 13pt;
+	color: #AA0000
 }
 
 .new_item {

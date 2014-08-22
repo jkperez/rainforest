@@ -1,3 +1,5 @@
+include ActionView::Helpers::TextHelper
+
 class Product < ActiveRecord::Base
 	validates :description, :name, presence: true
 	validates :price_in_cents, numericality: { only_integer: true, greater_than: 0 }
@@ -22,8 +24,22 @@ class Product < ActiveRecord::Base
 		"$" + price_in_dollars;
 	end
 
-	def image_tag
-		"<img src=\"#{picture}\" alt=\"#{name}\" class=\"product\">".html_safe
+	def large_thumbnail 
+		extension_index = picture.rindex('.')
+		picture.insert(extension_index, 'l')
+	end
+
+	def small_thumbnail
+		extension_index = picture.rindex('.')
+		picture.insert(extension_index, 'b')
+	end
+
+	def thumbnail
+		"<img src=\"#{small_thumbnail}\" alt=\"#{name}\" class=\"product\">".html_safe
+	end
+
+	def image
+		"<img src=\"#{large_thumbnail}\" alt=\"#{name}\" class=\"product\">".html_safe
 	end
 
 	def number_of_reviews
@@ -44,5 +60,9 @@ class Product < ActiveRecord::Base
 		}
 
 		sprintf("%.1f", rating_total.to_f / rating_count)
+	end
+
+	def reviews_summary
+		"#{pluralize(number_of_reviews, 'Review')}<br>Average #{average_review}".html_safe
 	end
 end

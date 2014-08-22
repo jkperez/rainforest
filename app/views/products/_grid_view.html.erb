@@ -1,13 +1,16 @@
 <% @products.each do |product| %>
    <div class="col-xs-6 col-sm-6 col-md-4">
       <div class="thumbnail">
-        <%= link_to product.image_tag, product_path(product) %>
+        <h3><%= link_to product.name, product_path(product) %></h3>
+        
+        <%= link_to product.thumbnail, product_path(product) %>
+        
         <div class="caption">
-          <h3><%= link_to product.name, product_path(product) %></h3>
-          <p><%= product.description %></p>
-          <p><%= product.formatted_price %></p>
-          <!--<%= link_to t('.show', :default => t("helpers.links.show")),
-          product, :class => 'btn btn-default btn-xs' %> -->
+          <p><%= product.reviews_summary %></p>
+          <p><span class="price"><%= product.formatted_price %></span></p>
+        </div>
+
+        <div class="actions">
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
           edit_product_path(product), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
