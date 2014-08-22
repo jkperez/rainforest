@@ -77,11 +77,19 @@ section#product-reviews {
 #new-review {
 	float: right;
 	margin-right: 50px;
-	width: 400px;
+	width: 40%;
+}
+
+#new-review h3 {
+	padding-left: 40px;
 }
 
 #new-review #error_explanation {
 	width: 350px;
+}
+
+#reviews {
+	width: 55%;
 }
 
 #reviews p, form#new_review {
@@ -91,12 +99,10 @@ section#product-reviews {
 #reviews h3 {
 	font-size: 28pt;
 	border-bottom: 2px solid black;
-	width: 550px;
 	padding-left: 30px;
 }
 
 section.review {
-	width: 550px;
 	border: 1px solid white;
 	background-color: rgba(255,255,255,0.5);
 	box-shadow: 10px 10px 5px #888888;
