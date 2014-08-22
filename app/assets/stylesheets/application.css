@@ -52,6 +52,7 @@ body .page-header h1 {
 body > nav, body >article {
 	margin: auto;
 	background-color: #f4d9aa;
+	background-image: url("//i.imgur.com/ZKzxQCR.png");
 	border: 2px solid rgba(0,0,0,0.25);
 	border-radius: 25px;
 }
@@ -118,6 +119,7 @@ article h2 {
 	overflow: auto;
 	border-radius: 10px;
   box-shadow: 10px 10px 5px #888888;
+  background-color: rgba(255,255,255,.66);
 
 }
 
