@@ -31,7 +31,7 @@ class Product < ActiveRecord::Base
 
 		if sale && sale < 100 
 			result = "<span class='regular-price'>$#{stringify_cost(price_in_dollars)}</span><br>".html_safe
-			price_in_dollars *= sale
+			price_in_dollars *= sale / 100.0
 		end
 
 		result += "<span class='price'>$#{stringify_cost(price_in_dollars)}</span>".html_safe
