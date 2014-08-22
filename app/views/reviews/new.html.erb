@@ -1,5 +1,9 @@
-<h1>New review</h1>
+<nav> <%= link_to "Back to Homepage", "/", :class => 'btn btn-default' %></nav>
 
-<%= render 'form' %>
+<article id="review-new">
+	<h1>New review</h1>
 
-<%= link_to 'Back', reviews_path %>
+	<%= render 'form' %>
+
+	<%= link_to 'Back', reviews_path %>
+</article>

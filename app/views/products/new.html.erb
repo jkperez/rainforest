@@ -1,5 +1,9 @@
+<nav> <%= link_to "Back to Homepage", "/", :class => 'btn btn-default' %></nav>
+
 <%- model_class = Product -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
-</div>
-<%= render :partial => 'form' %>
+<article id="product-new">
+	<div class="page-header">
+	  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+	</div>
+	<%= render :partial => 'form' %>
+</article>

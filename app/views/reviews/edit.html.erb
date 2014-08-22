@@ -1,6 +1,10 @@
-<h1>Editing review</h1>
+<nav> <%= link_to "Back to Reviews", reviews_path, :class => 'btn btn-default' %></nav>
 
-<%= render 'form' %>
+<article id="reviews-edit">
+	<h1>Editing review</h1>
 
-<%= link_to 'Show', @review %> |
-<%= link_to 'Back', reviews_path %>
+	<%= render 'form' %>
+
+	<%= link_to 'Show', @review %> |
+	<%= link_to 'Back', reviews_path %>
+</article>

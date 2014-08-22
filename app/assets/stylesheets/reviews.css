@@ -1,0 +1,12 @@
+form.review {
+	width: 75%;
+	margin: auto;
+}
+
+form.review .control-group {
+	margin: 15px 0px; 
+}
+
+form.review textarea, form.review input {
+	width: 100%
+}

@@ -31,7 +31,8 @@ class Product < ActiveRecord::Base
 
 	def small_thumbnail
 		extension_index = picture.rindex('.')
-		picture.insert(extension_index, 'b')
+		thumb = picture.chomp
+		thumb.insert(extension_index, 'b')
 	end
 
 	def thumbnail
