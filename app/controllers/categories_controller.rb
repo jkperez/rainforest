@@ -7,10 +7,10 @@ class CategoriesController < ApplicationController
 
   def show
     @page = (params[:page] || 1).to_i 
-    @offset = (@page - 1)  * 9
-    @final_page = @offset + 9 >= Product.all.count
+    @offset = (@page - 1)  * 8
+    @final_page = @offset + 8 >= Product.all.count
     
-    @products = @category.products.order(updated_at: :desc).limit(9).offset(@offset).all
+    @products = @category.products.order(updated_at: :desc).limit(8).offset(@offset).all
   end
 
   def new
