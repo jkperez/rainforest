@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get 'products/', to: 'products#index', page: 1
   get 'products/page/:page', to: 'products#index'
 
+  get 'categories/:id', to: 'categories#show', page: 1
+  get 'categores/:id/page/:page', to: 'categories#show'
+
+
   resources :products do
     resources :reviews
   end

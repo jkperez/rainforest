@@ -5,7 +5,9 @@
 
 <%- model_class = Product -%>
 <article>
-  <h1>Viewing Products <%= "#{@offset + 1} to #{@offset + @products.count}" %></h1>
+	<header>
+  	Viewing Products <%= "#{@offset + 1} to #{@offset + @products.count}" %>
+	</header>
   
   <%= render 'grid_view' %>
 

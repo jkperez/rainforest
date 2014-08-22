@@ -113,6 +113,11 @@ article h2 {
 	margin-bottom: 5px;
 }
 
+article header {
+	margin: 10px;
+	padding-left: 30px;
+}
+
 #index p.total_displayed {
 	font-size: 11px;
 	padding-left: 50px;

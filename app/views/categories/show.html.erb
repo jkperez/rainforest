@@ -5,8 +5,18 @@
 	<div class="page-header">
 	  <h1><%= @category.name %></h1>
 	</div>
-
-	<% @products = @category.products %>
-
+	
+	<header>
+		Viewing Products <%= "#{@offset + 1} to #{@offset + @products.count}" %>
+	</header>
+	
 	<%= render 'products/grid_view' %>
+
+	<% if @page > 1 %>
+  	<nav id="previous"><%= link_to 'Previous page', page: @page - 1 %></nav>
+  <% end %>
+  <% unless @final_page %>
+  	<nav id="next"><%= link_to 'Next page', page: @page + 1 %></nav>
+  <% end %>
+
 </article>
