@@ -69,3 +69,34 @@ section#product-reviews {
 	font-size: 16px;
 	margin: 0;
 }
+
+#new-review {
+	float: right;
+	margin-right: 50px;
+	width: 400px;
+}
+
+#new-review #error_explanation {
+	width: 350px;
+}
+
+#reviews p, form#new_review {
+	font-size: 13pt;
+}
+
+#reviews h3 {
+	font-size: 28pt;
+	border-bottom: 2px solid black;
+	width: 550px;
+	padding-left: 30px;
+}
+
+section.review {
+	width: 550px;
+	border: 1px solid white;
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: 10px 10px 5px #888888;
+	border-radius: 10px;
+	padding: 15px;
+	margin-bottom: 30px;
+}

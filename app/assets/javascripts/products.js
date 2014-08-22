@@ -3,8 +3,9 @@
 $( function() {
   $("#new_review").on("ajax:success", function(e, data, status, xhr) {
   	$("#reviews").append(xhr.responseText)
-  	$("div#errors").html("")
+  	$("#new-review").html("<h3>Thanks for your Review!</h3>")
+
   }).on("ajax:error", function(e, xhr, status, error) {
-   	$("div#errors").html(xhr.responseText)
+   	$("#review-errors").html(xhr.responseText)
   })
 })

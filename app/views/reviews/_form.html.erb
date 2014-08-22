@@ -1,5 +1,3 @@
-<% on_product_page = !@product.nil? %>
-
 <%= form_for(@review, remote: !!@product) do |f| %>
   <% if @review.errors.any? %>
     <%= render 'review_errors' %>

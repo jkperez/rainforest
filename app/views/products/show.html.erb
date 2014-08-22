@@ -38,17 +38,17 @@
   </section>
 
   <section id="product-reviews">
-    <div id="reviews">
+    <section id="new-review">
+      <h3>Add a new review:</h3>
+      <div id="review-errors"></div>
+      <%= render 'reviews/form' %>
+    </section>
+
+    <section id="reviews">
       <h3>Reviews</h3>
       <% @product.reviews.each do |review| %>
         <%= render partial: 'reviews/inline_review', locals: { review: review } %>
       <% end %>
-    </div>
-
-    <div id="new_review">
-      <h3>New Review</h3>
-      <div id="errors"></div>
-      <%= render 'reviews/form' %>
-    </div>
+    </section>
   </section>
 </article>

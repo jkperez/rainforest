@@ -40,12 +40,13 @@ body > header > a:hover {
 
 body .page-header {
 	margin-top: 0;
+	border-width: 3px;
+	border-color: black;
 }
 
 body .page-header h1 {
 	text-align: center;
 	font-size: 35px;
-	font-family: Impact;
 	margin: 0;
 }
 
