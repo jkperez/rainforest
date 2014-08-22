@@ -2,6 +2,14 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+#product h1 {
+	text-align: center;
+	margin: 0;
+	border-bottom: 2px solid rgba(0,0,0,0.66);
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+}
+
 a img.product {
 	border: 2px solid transparent;
 }
@@ -21,4 +29,43 @@ form.product {
 
 form.product .control-group {
 	margin: 15px 0px; 
+}
+
+aside#product-image {
+	float: left;
+	margin: 20px;
+	margin-top: 0;
+}
+
+section#product-info {
+	float: left;
+	margin-left: 40px;
+
+}
+
+section#product-reviews {
+	clear: both;
+	border-top: 2px solid rgba(0,0,0,0.66);
+}
+
+#product-description {
+	list-style: none;
+	padding: 0;
+}
+
+#product-description li {
+	margin-bottom: 10px;
+}
+
+#product-description h1 {
+	font-size: 20px;
+	margin-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 30px;
+	text-align: left;
+}
+
+#product-description p {
+	font-size: 16px;
+	margin: 0;
 }

@@ -62,6 +62,12 @@ body > nav {
 	margin-bottom: 30px;
 	text-align: center;
 }
+
+.price {
+	font-size: 13pt;
+	color: #AA0000
+}
+
 nav li {
 	margin-bottom: 4px;
 	display: inline;
@@ -130,11 +136,6 @@ article h2 {
 
 .thumbnail .actions {
 	text-align: center;
-}
-
-.thumbnail .price {
-	font-size: 13pt;
-	color: #AA0000
 }
 
 .new_item {

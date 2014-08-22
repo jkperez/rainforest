@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
 			place -= 3
 		end
 
-		"$" + price_in_dollars;
+		"<span class='price'>$#{price_in_dollars}</span>".html_safe
 	end
 
 	def large_thumbnail 

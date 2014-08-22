@@ -2,38 +2,53 @@
 
 <article id="product">
   <%- model_class = Product -%>
+  <h1><%= @product.name %></h1>
 
+  <section id="product-body">
+    <aside id="product-image">
+      <%= @product.image %>
+    </aside>
+    <section id="product-info">
 
- 
+      <ul id="product-description">
+        <li>
+          <section >
+            <h1>Category</h1>
+            <p><%= @product.category.name %></p>
+          </section>
+        <li>
+          <section >
+            <h1>Price</h1>
+            <p><%= @product.formatted_price %></p>
+          </section>
+        <li>
+          <section >
+            <h1>Product Description</h1>
+            <p><%= @product.description %></p>
+          </section>
+        <li> <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                    edit_product_path(@product), :class => 'btn btn-default' %>
+             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    product_path(@product),
+                    :method => 'delete',
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-danger' %>
+      </ul>
+    </section>
+  </section>
 
-  <dl class="dl-horizontal">
-    <dt></dt>
-    <dd><%= @product.image %></dd> <br>
-    <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-    <dd><%= @product.description %></dd> <br>
-    <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
-    <dd><%= @product.category.name %></dd> <br>
-    <dt><strong>Price:</strong></dt>
-    <dd><%= @product.formatted_price %></dd>
-    <dd> <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                edit_product_path(@product), :class => 'btn btn-default' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                product_path(@product),
-                :method => 'delete',
-                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                :class => 'btn btn-danger' %></dd>
-  </dl>
+  <section id="product-reviews">
+    <div id="reviews">
+      <h3>Reviews</h3>
+      <% @product.reviews.each do |review| %>
+        <%= render partial: 'reviews/inline_review', locals: { review: review } %>
+      <% end %>
+    </div>
 
-  <div id="reviews">
-    <h3>Reviews</h3>
-    <% @product.reviews.each do |review| %>
-      <%= render partial: 'reviews/inline_review', locals: { review: review } %>
-    <% end %>
-  </div>
-
-  <div id="new_review">
-    <h3>New Review</h3>
-    <div id="errors"></div>
-    <%= render 'reviews/form' %>
-  </div>
+    <div id="new_review">
+      <h3>New Review</h3>
+      <div id="errors"></div>
+      <%= render 'reviews/form' %>
+    </div>
+  </section>
 </article>
