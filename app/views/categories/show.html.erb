@@ -1,8 +1,10 @@
-<%- model_class = Category -%>
-<div class="page-header">
-  <h1><%= @category.name %></h1>
-</div>
+<article id="category">
+  <%- model_class = Category -%>
+	<div class="page-header">
+	  <h1><%= @category.name %></h1>
+	</div>
 
-<% @products = @category.products %>
+	<% @products = @category.products %>
 
-<%= render 'products/grid_view' %>
+	<%= render 'products/grid_view' %>
+</article>

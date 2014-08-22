@@ -1,10 +1,21 @@
+<nav>
+  <p>Welcome to The Scrubland. To start shopping, select a category below, or choose a category from this list.</p>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= link_to "#{category.name}", category_path(category) %></li>
+    <% end %>
+  </ul>
+</nav>
+
 <article id="index">
-  
-      <% @categories.each do |category| %>
+  <% @categories.each do |category| %>
+    <section>
       <h2><%= link_to category.name, category_path(category) %></h2>
-        	<% @products = category.recent_3_products %>
-        	<section>
-						<%= render 'products/grid_view' %>
-					</section>
-      <% end %>
+      <% @products = category.recent_3_products %>
+      <% count = category.product_count %>
+      <p class="total_displayed"><%= "Displaying #{@products.count} of #{count} items in this category." %></p>
+			<%= render 'products/grid_view' %>
+      <p class="view_all"><%= link_to "View all #{pluralize(count, 'item')}.", category_path(category) %></p>
+		</section>
+  <% end %>
 </article>

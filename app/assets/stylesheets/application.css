@@ -38,26 +38,76 @@ body > header > a:hover {
 	background-color: rgba(0,0,0,.05)
 }
 
+body .page-header {
+	margin-top: 0;
+}
+
 body .page-header h1 {
 	text-align: center;
 	font-size: 35px;
 	font-family: Impact;
+	margin: 0;
 }
 
-article {
-	width: 80%;
+body > nav, body >article {
 	margin: auto;
 	background-color: #f4d9aa;
-	padding: 25px;
-	border-radius: 25px;
 	border: 2px solid rgba(0,0,0,0.25);
+	border-radius: 25px;
+}
+
+body > nav {
+	width: 70%;
+	padding: 10px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+nav li {
+	margin-bottom: 4px;
+	display: inline;
+}
+
+nav li a {
+	padding-left: 5px;
+}
+
+nav li:before {
+	content: "|"
+}
+
+nav li:first-child:before {
+	content: "";
+}
+
+body > article {
+	width: 80%;
+	padding: 25px;
 	font-size: 20px;
 	font-family: Impact;
 	overflow: auto;
+	margin-bottom: 40px;
+}
+
+article h2 {
+	border-bottom: 2px solid black;
+	text-align: left;
+	padding-left: 40px;
+	clear: both;
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+#index p.total_displayed {
+	font-size: 11px;
+	padding-left: 50px;
+}
+
+#index p.view_all {
+	text-align: right;
+	padding-right: 30px;
+	clear: both;
 }
 
 .new_item {
-	clear: left;
-	display: block;
 	width: 100px;
 }
