@@ -13,3 +13,12 @@ a img.product:hover {
 article#product img.product {
 	box-shadow: 10px 10px 5px #888888;
 }
+
+form.product {
+	width: 75%;
+	margin: auto;
+}
+
+form.product .control-group {
+	margin: 15px 0px; 
+}
