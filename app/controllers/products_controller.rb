@@ -71,8 +71,8 @@ class ProductsController < ApplicationController
     end
 
     def set_categories
-      # @categories = Category.order(:name)
-      @categories = ['Category 1', 'Category 2']
+      @categories = Category.order(:name)
+      # @categories = ['Category 1', 'Category 2']
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -34,7 +34,6 @@
   <div class="control-group">
     <%= f.label :category_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select(:category_id, @categories, :id, :name) %>
     </div>
     <%= error_span(@product[:description]) %>
   </div>

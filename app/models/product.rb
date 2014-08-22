@@ -25,11 +25,14 @@ class Product < ActiveRecord::Base
 	end
 
 	def large_thumbnail 
+		return nil if picture.nil?
+		
 		extension_index = picture.rindex('.')
 		picture.insert(extension_index, 'l')
 	end
 
 	def small_thumbnail
+		return nil if picture.nil?
 		extension_index = picture.rindex('.')
 		thumb = picture.chomp
 		thumb.insert(extension_index, 'b')
