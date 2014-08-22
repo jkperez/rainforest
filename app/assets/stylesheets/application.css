@@ -96,7 +96,7 @@ nav li:first-child:before {
 }
 
 body > article {
-	width: 80%;
+	width: 90%;
 	padding: 25px;
 	font-size: 20px;
 	font-family: Verdana;
@@ -129,7 +129,9 @@ article h2 {
 	border-radius: 10px;
   box-shadow: 10px 10px 5px #888888;
   background-color: rgba(255,255,255,.66);
-
+  height: 250px;
+  max-height: 250px;
+  overflow: hidden;
 }
 
 .thumbnail h3 {
