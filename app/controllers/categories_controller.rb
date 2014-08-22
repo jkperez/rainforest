@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   def show
     @page = (params[:page] || 1).to_i 
     @offset = (@page - 1)  * 8
-    @final_page = @offset + 8 >= Product.all.count
+    @final_page = @offset + 8 >= @category.products.count
     
     @products = @category.products.order(updated_at: :desc).limit(8).offset(@offset).all
   end
