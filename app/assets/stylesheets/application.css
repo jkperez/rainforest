@@ -154,6 +154,14 @@ article header {
 	border-radius: 8px;
 }
 
+.thumbnail .caption {
+	padding: 9px 0 0 0;
+}
+
+.thumbnail .caption p {
+	margin-bottom: 5px;
+}
+
 .thumbnail .actions {
 	text-align: center;
 }

@@ -1,6 +1,21 @@
 class CartItemController < ApplicationController
 	before_action :set_cart_item, only: [:update]
 
+	def create 
+		cart_item = CartItem.new
+		cart_item.cart = Cart.take
+		cart_item.product = Product.find params[:p]
+		cart_item.quantity = 1;
+
+		respond_to do |format|
+			if(cart_item.save)
+				format.html { redirect_to '/cart/', notice: "#{cart_item.product} has been added to the cart."}
+			else
+				format.html { redirect_to '/', notice: "Could not add product to your cart."}
+			end
+		end
+	end
+
 	def update
     respond_to do |format|
 			if(@cart_item.update(cart_item_params))
