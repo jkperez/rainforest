@@ -19,7 +19,8 @@ a img.product:hover {
 }
 
 article#product img.product {
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 10px 10px 20px #666;
+	border-radius: 5px;
 }
 
 form.product {
