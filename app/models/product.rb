@@ -1,6 +1,8 @@
 include ActionView::Helpers::TextHelper
 
 class Product < ActiveRecord::Base
+	include(ApplicationHelper)
+
 	validates :description, :name, presence: true
 	validates :price_in_cents, numericality: { only_integer: true, greater_than: 0 }
 	validates :price_in_cents, numericality: { less_than: (2**31)-1, message: "is too large. Largest allowable value is 21.4 million dollars."}
@@ -12,36 +14,39 @@ class Product < ActiveRecord::Base
 	has_many :cart_items
 	has_many :carts, through: :cart_items
 
-	def stringify_cost(cost)
-		price_in_dollars = sprintf("%.2f", cost)
-
-		place = price_in_dollars.rindex('.') - 3
-
-		while place > 0
-			price_in_dollars.insert(place, ',')
-			place -= 3
-		end
-
-		price_in_dollars
-	end
-
 	def formatted_price(quantity = 1)
 		result = "".html_safe
 
-		price_in_dollars = price_in_cents.to_f / 100 * quantity
+		price_in_dollars = (price_in_cents.to_f / 100) * quantity
 
 		if sale && sale < 100 
-			result = "<span class='regular-price'>$#{stringify_cost(price_in_dollars)}</span><br>".html_safe
+			result = "<span class='regular-price'>#{stringify_cost(price_in_dollars)}</span><br>".html_safe
 			price_in_dollars *= sale / 100.0
 		end
 
-		result += "<span class='price'>$#{stringify_cost(price_in_dollars)}</span>".html_safe
+		result += "<span class='price'>#{stringify_cost(price_in_dollars)}</span>".html_safe
 	end
 
 	def formatted_sale
 		# sales are only on if there's a discount
 		if(sale && sale < 100)
 			"SALE! #{100 - sale}% off!"
+		end
+	end
+
+	def sale_adjusted_price_in_cents(quantity = 1) 
+		if(sale)
+			(price_in_cents * quantity * sale/100.0 ).to_i
+		else 
+			price_in_cents
+		end
+	end
+
+	def savings(quantity = 1)
+		if sale
+			price_in_cents * quantity * (100 - sale) / 100.0
+		else
+			0
 		end
 	end
 
