@@ -6,6 +6,6 @@ class Category < ActiveRecord::Base
 	end
 
 	def recent_3_products
-		products.order(updated_at: :desc).limit(4)
+		products.order(updated_at: :desc).limit(3)
 	end
 end
