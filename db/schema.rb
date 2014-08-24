@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140824143807) do
+ActiveRecord::Schema.define(version: 20140824183001) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "quantity",   null: false

@@ -47,7 +47,7 @@
 }
 
 .cart-item .quantity, .cart-item .actions, .cart-item section.price {
-	padding: 0px 4px;
+	/*padding: 0px 4px;*/
 	width: 11%;
-	border-left: 2px solid black;
+	/*border-left: 2px solid black;*/
 }
