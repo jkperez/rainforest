@@ -3,7 +3,11 @@
 </nav>
 
 <article id="cart">
-<% @cart.cart_items.each do |cart_item| %>
-	<%= render partial: "cart_item", locals: { cart_item: cart_item } %>
-<% end %>
+	<% if notice %>
+		<section id="notice-wrapper"><p id="notice"><%= notice %></p></section>
+	<% end %>
+
+	<% @cart.cart_items.each do |cart_item| %>
+		<%= render partial: "cart_item", locals: { cart_item: cart_item } %>
+	<% end %>
 </article>
