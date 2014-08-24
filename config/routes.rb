@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'cart/view'
+
   resources :reviews
 
   get 'products/', to: 'products#index', page: 1

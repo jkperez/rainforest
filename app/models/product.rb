@@ -9,6 +9,8 @@ class Product < ActiveRecord::Base
 	belongs_to :category
 
 	has_many :reviews
+	has_many :cart_items
+	has_many :carts, through: :cart_items
 
 
 	def stringify_cost(cost)
