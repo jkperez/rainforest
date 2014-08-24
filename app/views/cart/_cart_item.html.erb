@@ -35,7 +35,7 @@
 
   <section class="actions">
     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-    product_path(product),
+    cart_item_path(cart_item),
     :method => :delete,
     :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
     :class => 'btn btn-xs btn-danger' %>
