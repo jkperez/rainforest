@@ -1,2 +1,9 @@
-<h1>Cart#view</h1>
-<p>Find me in app/views/cart/view.html.erb</p>
+<nav>
+	<%= link_to "Back to Homepage", root_path, :class => 'btn btn-default' %>
+</nav>
+
+<article id="cart">
+<% @cart.cart_items.each do |cart_item| %>
+	<%= render partial: "cart_item", locals: { cart_item: cart_item } %>
+<% end %>
+</article>

@@ -12,7 +12,6 @@ class Product < ActiveRecord::Base
 	has_many :cart_items
 	has_many :carts, through: :cart_items
 
-
 	def stringify_cost(cost)
 		price_in_dollars = sprintf("%.2f", cost)
 
@@ -26,10 +25,10 @@ class Product < ActiveRecord::Base
 		price_in_dollars
 	end
 
-	def formatted_price
+	def formatted_price(quantity = 1)
 		result = "".html_safe
 
-		price_in_dollars = price_in_cents.to_f / 100
+		price_in_dollars = price_in_cents.to_f / 100 * quantity
 
 		if sale && sale < 100 
 			result = "<span class='regular-price'>$#{stringify_cost(price_in_dollars)}</span><br>".html_safe

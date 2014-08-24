@@ -9,12 +9,13 @@ Rails.application.routes.draw do
   get 'categories/:id', to: 'categories#show', page: 1
   get 'categores/:id/page/:page', to: 'categories#show'
 
-
   resources :products do
     resources :reviews
   end
 
   resources :categories
+
+  resources :cart_item, only: [:create, :update, :destroy]
 
   get 'cart', to: 'cart#show'
 
