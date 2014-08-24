@@ -17,7 +17,7 @@
 }
 
 .cart-item aside {
-	width: 200px;
+	width: 140px;
 	text-align: center;
 }
 
@@ -31,6 +31,7 @@
 	max-height: 70px;
 	overflow: hidden;
 	font-size: 26px;
+	padding: 4px;
 }
 
 .cart-item form {
@@ -41,13 +42,8 @@
 	width: 45px;
 }
 
-
- {
-	width: 12%;
-}
-
 .cart-item .quantity, .cart-item .actions, .cart-item section.price {
 	/*padding: 0px 4px;*/
-	width: 11%;
+	width: 12%;
 	/*border-left: 2px solid black;*/
 }

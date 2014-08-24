@@ -1,5 +1,5 @@
 class CartItemController < ApplicationController
-	before_action :set_cart_item, only: [:update]
+	before_action :set_cart_item, only: [:update, :destroy]
 
 	def create 
 		cart = Cart.take
@@ -17,7 +17,7 @@ class CartItemController < ApplicationController
 
 		respond_to do |format|
 			if(cart_item.save)
-				format.html { redirect_to '/cart/', notice: "#{cart_item.product} has been added to the cart."}
+				format.html { redirect_to '/cart/', notice: "#{cart_item.product.name} has been added to the cart."}
 			else
 				format.html { redirect_to '/', notice: "Could not add product to your cart."}
 			end
@@ -32,6 +32,14 @@ class CartItemController < ApplicationController
 				format.html { redirect_to '/cart/', notice: "#Could not set #{@cart_item.product.name}'s quantity." }
 			end
 		end
+	end
+
+	def destroy
+		product_name = @cart_item.product.name
+    @cart_item.destroy
+    respond_to do |format|
+      format.html { redirect_to '/cart/', notice: "\"#{product_name}\" was removed from the cart." }
+    end
 	end
 
 	private
