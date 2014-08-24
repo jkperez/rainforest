@@ -29,7 +29,8 @@
             <h1>Product Description</h1>
             <p><%= @product.description %></p>
           </section>
-        <li> <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        <li><%= link_to "Add to Cart", cart_item_index_path(p: @product.id), method: :post, class: 'btn btn-default' %>
+          <br><br><%= link_to t('.edit', :default => t("helpers.links.edit")),
                     edit_product_path(@product), :class => 'btn btn-default' %>
              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                     product_path(@product),

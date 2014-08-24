@@ -8,6 +8,10 @@
 </nav>
 
 <article id="index">
+  <% if notice %>
+    <section id="notice-wrapper"><p id="notice"><%= notice %></p></section>
+  <% end %>
+
   <% @categories.each do |category| %>
     <section>
       <h2><%= link_to category.name, category_path(category) %></h2>

@@ -19,7 +19,7 @@ class CartItemController < ApplicationController
 			if(cart_item.save)
 				format.html { redirect_to '/cart/', notice: "#{cart_item.product.name} has been added to the cart."}
 			else
-				format.html { redirect_to '/', notice: "Could not add product to your cart."}
+				format.html { redirect_to root_path, notice: "Could not add product to your cart."}
 			end
 		end
 	end
