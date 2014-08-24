@@ -65,16 +65,16 @@ body > nav {
 	text-align: center;
 }
 
-.price {
+span.price {
 	font-size: 13pt;
 	color: #AA0000
 }
 
-.regular-price {
+span.regular-price {
 	text-decoration: line-through;
 }
 
-.sale {
+span.sale {
 	font-weight: bold;
 }
 
@@ -132,7 +132,7 @@ article header {
 .thumbnail {
 	overflow: auto;
 	border-radius: 10px;
-  box-shadow: 10px 10px 5px #888888;
+  box-shadow: 10px 10px 15px #666;
   background-color: rgba(255,255,255,.66);
   height: 250px;
   max-height: 250px;
