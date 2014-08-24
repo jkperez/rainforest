@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'cart/view'
-
+  root 'welcome#index'
+  
   resources :reviews
 
   get 'products/', to: 'products#index', page: 1
@@ -16,11 +16,13 @@ Rails.application.routes.draw do
 
   resources :categories
 
+  get 'cart', to: 'cart#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

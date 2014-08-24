@@ -1,4 +1,4 @@
 class CartController < ApplicationController
-  def view
+  def show
   end
 end
