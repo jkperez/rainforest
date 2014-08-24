@@ -6,8 +6,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-<header><a href="/"></a></header>
+<header>
+	<nav id="user-nav">
+		<ul>
+			<li><%= link_to "View Cart (#{@cart.products.count})", '/cart/' %></li>
+		</ul>
+	</nav>
+	<a href="/"></a>
+</header>
 
 <%= yield %>
 
