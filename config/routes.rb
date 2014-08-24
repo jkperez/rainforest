@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :cart_item, only: [:create, :update, :destroy]
 
   get 'cart', to: 'cart#show'
+  post 'cart/purchase/', to: 'cart#purchase'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

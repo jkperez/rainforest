@@ -7,7 +7,38 @@
 		<section id="notice-wrapper"><p id="notice"><%= notice %></p></section>
 	<% end %>
 
-	<% @cart.cart_items.each do |cart_item| %>
-		<%= render partial: "cart_item", locals: { cart_item: cart_item } %>
-	<% end %>
+	<section id="cart-items">
+		<% @cart.cart_items.each do |cart_item| %>
+			<%= render partial: "cart_item", locals: { cart_item: cart_item } %>
+		<% end %>
+	</section>
+
+	<section id="cart-summary">
+		<dl>
+			<dt>Total cost:
+				<dd><span class="price"><%= @cart.total %></span></dd>
+			</dt>
+			<dt>Savings:
+				<dd><span class="sale"><%= @cart.total_savings %></span></dd>
+			</dt>
+		</dl>
+		<%= form_tag("/cart/purchase/", method: :post) do %>
+			  <p>
+			    <%= label_tag :credit_card, "Credit Card Number" %><br>
+			    <%= text_field_tag :credit_card %>
+			  </p>
+			  <p>
+			    <%= label_tag :cv2, "CV2 Code" %><br>
+			    <%= text_field_tag :cv2 %>
+			  </p>
+			  <p>
+			    <%= label_tag :expiration, "Expiration Date" %><br>
+		      <%= select_tag :expiration_day, options_for_select((1..12).to_a.map() { |i| sprintf("%02i", i)}) %>
+		      <% current_year = Date.current.year - 2000 %>
+		      <%= select_tag :expiration_year, options_for_select((current_year..current_year+15).to_a.map() { |i| sprintf("%02i", i)}) %>
+			  </p>
+			  <p>
+			  	<%= submit_tag "Pay Now" %>
+		<% end %>
+	</section>
 </article>

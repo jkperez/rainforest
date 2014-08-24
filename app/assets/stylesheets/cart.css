@@ -1,13 +1,40 @@
 /* Place all the styles related to the Cart controller here.*/
-.cart-item {
-  box-shadow: 5px 5px 15px #666;
+#cart-items, #cart-summary {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#cart-summary {
+	width: 20%;
+	display: inline-block;
+	font-size: 14px;
+}
+
+#cart-summary, .cart-item {
+	box-shadow: 5px 5px 15px #666;
   background-color: rgba(255,255,255,.66);
 	border: 2px solid white;
 	border-radius: 8px;
 	padding: 15px;
+}
+
+#cart-summary dd {
+	margin-bottom: 10px;
+	padding-left: 15px;
+}
+
+#cart-summary dd .sale {
+	font-size: 16px;
+}
+
+#cart-items {
+	width: 78%;
+	padding-right: 15px;
+}
+
+.cart-item {
 	display: table;
-	width: 90%;
-	margin: auto;
+	width: 100%;
 	margin-bottom: 13px;
 }
 
@@ -40,10 +67,11 @@
 
 .cart-item .quantity input[type=text] {
 	width: 45px;
+	margin-bottom: 5px;
 }
 
 .cart-item .quantity, .cart-item .actions, .cart-item section.price {
-	/*padding: 0px 4px;*/
-	width: 12%;
+	padding: 0px 2px;
+	width: 13%;
 	/*border-left: 2px solid black;*/
 }
