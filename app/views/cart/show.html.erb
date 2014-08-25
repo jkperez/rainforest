@@ -3,9 +3,7 @@
 </nav>
 
 <article id="cart">
-	<% if notice %>
-		<section id="notice-wrapper"><p id="notice"><%= notice %></p></section>
-	<% end %>
+  <%= render partial: "layouts/notice", locals: {notice: notice} %>
 
 	<section id="cart-items">
 		<% @cart.cart_items.each do |cart_item| %>

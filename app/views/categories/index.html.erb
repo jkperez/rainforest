@@ -2,11 +2,13 @@
 <nav> 
   <%= link_to "Back to Homepage", "/", :class => 'btn btn-default' %>
   <p>
-    <%= link_to "New Category",new_category_path, :class => 'btn btn-primary' %>
+    <%= link_to "New Category", new_category_path, :class => 'btn btn-primary' %>
   </p>
 </nav>
 
 <article id="category">
+  <%= render partial: "layouts/notice", locals: {notice: notice} %>
+
   <div class="page-header">
     <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
   </div>
