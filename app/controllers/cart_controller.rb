@@ -1,5 +1,10 @@
 class CartController < ApplicationController
   def show
+  	if @cart.cart_items.empty?
+  		respond_to do |format|
+				format.html { redirect_to root_path, notice: "Your cart is empty." }
+			end
+		end
   end
 
   def purchase
