@@ -2,16 +2,15 @@ class CartItemController < ApplicationController
 	before_action :set_cart_item, only: [:update, :destroy]
 
 	def create 
-		cart = Cart.take
 		product_id = params[:p]
 
-		cart_item = CartItem.find_by(cart_id: cart.id, product_id: product_id)
+		cart_item = CartItem.find_by(cart_id: @cart.id, product_id: product_id)
 		if(cart_item)
 			cart_item.quantity += 1;
 			success_message = "#{cart_item.product.name}'s quantity been updated to #{cart_item.quantity}."
 		else
 			cart_item = CartItem.new
-			cart_item.cart = cart
+			cart_item.cart = @cart
 			cart_item.product = Product.find product_id
 			cart_item.quantity = 1;
 			success_message = "#{cart_item.product.name} has been added to the cart."

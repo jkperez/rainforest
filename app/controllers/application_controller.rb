@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
 
   private
   	def set_cart
-  		@cart = Cart.take
+  		unless session[:cart]
+  			session[:cart] = Cart.new
+  			session[:cart].save
+  		end
+  		@cart = Cart.last
   	end
 end
