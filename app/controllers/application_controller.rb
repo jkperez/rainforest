@@ -7,10 +7,11 @@ class ApplicationController < ActionController::Base
 
   private
   	def set_cart
-  		unless session[:cart]
-  			session[:cart] = Cart.new
-  			session[:cart].save
+  		unless session[:cart_id]
+  			new_cart = Cart.new
+  			new_cart.save
+  			session[:cart_id] = new_cart.id
   		end
-  		@cart = session[:cart]
+  		@cart = Cart.find(session[:cart_id])
   	end
 end
