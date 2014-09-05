@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   			session[:cart] = Cart.new
   			session[:cart].save
   		end
-  		@cart = Cart.last
+  		@cart = session[:cart]
   	end
 end
