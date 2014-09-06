@@ -46,3 +46,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem "twitter-bootstrap-rails"
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
