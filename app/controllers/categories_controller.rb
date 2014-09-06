@@ -19,14 +19,16 @@ class CategoriesController < ApplicationController
   end
 
   def create
+    password_valid = Rails.application.secrets.secret_password == params[:password]
+    
     @category = Category.new(category_params)
-
+    
     respond_to do |format|
-      if @category.save
+      if password_valid && @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
-        format.html { render :new }
+        format.html { render :new, notice: 'Category could not be created.' }
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
@@ -38,13 +40,31 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   # PATCH/PUT /categories/1.json
   def update
+    password_valid = Rails.application.secrets.secret_password == params[:password]
+
     respond_to do |format|
-      if @category.update(category_params)
+      if password_valid && @category.update(category_params)
         format.html { redirect_to @category, notice: 'Review was successfully updated.' }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit }
         format.json { render json: @category.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    password_valid = Rails.application.secrets.secret_password == params[:password]
+
+    if password_valid
+      category_name = @category.name
+      @category.destroy
+      respond_to do |format|
+        format.html { redirect_to categories_path, notice: "\"#{category_name}\" was removed." }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to categories_path, notice: "Error deleting category." }
       end
     end
   end
