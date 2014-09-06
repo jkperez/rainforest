@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-
+  before_action :validate_password, only: [:create, :update, :destroy]
+  
   def index
     @categories = Category.all
   end
@@ -18,13 +19,11 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def create
-    password_valid = Rails.application.secrets.secret_password == params[:password]
-    
+  def create    
     @category = Category.new(category_params)
     
     respond_to do |format|
-      if password_valid && @category.save
+      if @password_valid && @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
@@ -40,10 +39,8 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   # PATCH/PUT /categories/1.json
   def update
-    password_valid = Rails.application.secrets.secret_password == params[:password]
-
     respond_to do |format|
-      if password_valid && @category.update(category_params)
+      if @password_valid && @category.update(category_params)
         format.html { redirect_to @category, notice: 'Review was successfully updated.' }
         format.json { render :show, status: :ok, location: @category }
       else
@@ -54,9 +51,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    password_valid = Rails.application.secrets.secret_password == params[:password]
-
-    if password_valid
+    if @password_valid
       category_name = @category.name
       @category.destroy
       respond_to do |format|
