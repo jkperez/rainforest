@@ -5,9 +5,8 @@
 	<div class="page-header">
 	  <h1><%= @category.name %></h1>
 	</div>
-	
-	<header>
-		Viewing Products <%= "#{@offset + 1} to #{@offset + @products.count}" %>
+	<header class="total_displayed">
+		Viewing Products <%= "#{@offset + 1} to #{@offset + @products.count}, of #{@category.products.count}" %> products in this category.
 	</header>
 	
 	<%= render 'products/grid_view' %>
