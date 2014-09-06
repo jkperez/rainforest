@@ -1,16 +1,22 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :validate_password, only: [:create, :update, :destroy]
-  
+
   def index
     @categories = Category.all
   end
 
   def show
-    @page = (params[:page] || 1).to_i 
     per_page = 9
+    last_page = (@category.products.count/per_page.to_f).ceil     
+    @page = (params[:page] || 1).to_i
+    @page = [@page, 1].max # page must be at least one
+    @page = [@page, last_page].min #page must not be beyond the limit
+
+    params[:page] = @page.to_s #reset the param if the page is invalid
+
     @offset = (@page - 1)  * per_page
-    @final_page = @offset + per_page >= @category.products.count
+    @final_page = @page == last_page
     
     @products = @category.products.order(updated_at: :desc).limit(9).offset(@offset).all
   end
