@@ -2,6 +2,8 @@
 
 <%- model_class = Product -%>
 <article id="product-new">
+  <%= render partial: "layouts/notice", locals: {notice: notice} %>
+
 	<div class="page-header">
 	  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
 	</div>

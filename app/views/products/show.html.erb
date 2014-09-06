@@ -2,6 +2,8 @@
 
 <article id="product">
   <%- model_class = Product -%>
+  <%= render partial: "layouts/notice", locals: {notice: notice} %>
+
   <h1><%= @product.name %></h1>
 
   <section id="product-body">

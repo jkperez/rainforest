@@ -5,6 +5,8 @@
 
 <%- model_class = Product -%>
 <article>
+  <%= render partial: "layouts/notice", locals: {notice: notice} %>
+
 	<header>
   	Viewing Products <%= "#{@offset + 1} to #{@offset + @products.count}" %>
 	</header>
