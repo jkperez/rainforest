@@ -18,6 +18,9 @@
 # Ignore .DS_Store
 /app/assets/.DS_Store
 
+# Ignore Secrets
+/config/secrets.yml
+
 # Ignore images
 /app/assets/images/scrubland.xcf
 /app/assets/images/skulls.xcf
